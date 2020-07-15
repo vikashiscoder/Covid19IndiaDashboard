@@ -30,10 +30,20 @@ stages:
       vmImage: $(vmImageName)
 
     steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '10.x'
+      displayName: 'Install Node.js'
+    - task: CmdLine@2
+      inputs:
+        script: 'npm install'
+    - task: CmdLine@2
+      inputs:
+        script: 'npm run build'
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/build'
         includeRootFolder: false
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
