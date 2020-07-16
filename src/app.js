@@ -5,6 +5,6 @@ ReactDOM.render((
          <Route path = "home" component = {App} />
          <Route path = "about" component = {App} />
          <Route path = "contact" component = {App} />
-      </Route>
+      </Route> 
    </Router>
 ), document.getElementById('root'))
