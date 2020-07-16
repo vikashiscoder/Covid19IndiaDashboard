@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './component/home';
 import About from './component/about';
 import Contact from './component/contact';
-import styles from './style.css';
+import PrimarySearchAppBar from './component/primarysearchappbar';
 
 class App extends Component {
   render() {
     return (
     <Router>
-        <div className="nav">
+        <div>
+        <PrimarySearchAppBar></PrimarySearchAppBar>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <ul className="navbar-nav mr-auto">
             <li><Link to={'/'} className="nav-link"> Home </Link></li>
