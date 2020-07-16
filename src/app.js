@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
     <Router>
-        <div className={styles.nav}>
+        <div className="nav">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <ul className="navbar-nav mr-auto">
             <li><Link to={'/'} className="nav-link"> Home </Link></li>
