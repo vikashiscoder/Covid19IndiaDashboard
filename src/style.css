@@ -1,6 +1,9 @@
 h1, p {
   font-family: Lato;
 }
+body{
+  background-color: green;
+}
 
 .nav {
   height: 50px;
