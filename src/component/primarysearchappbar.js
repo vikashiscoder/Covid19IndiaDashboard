@@ -14,6 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import BlurLinearTwoToneIcon from '@material-ui/icons/BlurLinearTwoTone';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -175,6 +176,7 @@ export default function PrimarySearchAppBar() {
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             INFOMETEORIX
+            <BlurLinearTwoToneIcon />
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
