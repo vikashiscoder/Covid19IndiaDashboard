@@ -12,7 +12,7 @@ class Home extends Component {
   render() {
     return (
         <div>
-         <div id="mapid"></div>
+         <div id="mapid" width="900px" height="900px"></div>
         </div>
     );
   }
