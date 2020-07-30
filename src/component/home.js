@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import styled from 'styled-components';
 
 class Home extends Component {
   componentDidMount(){
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
   }
   render() {
     return (
         <div>
 AAAS
+<div id="mapid"></div>
         </div>
     );
   }
