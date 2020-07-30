@@ -102,3 +102,5 @@ body {
     overflow-y: auto;
   }
 }
+
+#mapid { height: 180px; }
