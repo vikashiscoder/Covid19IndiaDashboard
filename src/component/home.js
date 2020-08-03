@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 class Home extends Component {
+
+constructor(props){
+  super(props);
+  this.state = {};
+}
+
   componentDidMount(){
     var mymap = L.map('mapid').setView([20.5937, 78.9629], 5);
 
@@ -13,20 +19,19 @@ class Home extends Component {
     accessToken: 'pk.eyJ1IjoidmlrYXNoaXMiLCJhIjoiY2tkOHI4YnZsMDZpeDJ6bWliM2Y5dTZiaCJ9.EweMjk3iwotgronCLOX-Fw'
 }).addTo(mymap);
 
-//var marker = L.marker([11.1271, 78.6569]).addTo(mymap);
+/*
 var popup = L.popup()
     .setLatLng([11.1271, 78.6569])
     .setContent("I am a standalone popup.")
     .openOn(mymap);
+*/
 
-icon = L.divIcon({
+var icon = L.divIcon({
         className: 'custom-div-icon',
-        html: "<div style='background-color:#c30b82;' class='marker-pin'></div><i class='material-icons'>weekend</i>",
-        iconSize: [30, 42],
-        iconAnchor: [15, 42]
+        html: "<span style='height: 10px;  width: 10px;  background-color: green;  border-radius: 50%;  display: flex; color: white; font:bold 10px serif;justify-content: center;align-items: center;'>1</span>",
     });
     
-L.marker([11.1271, 78.6569], { icon: icon }).addTo(map);
+L.marker([11.1271, 78.6569], { icon: icon }).addTo(mymap);
 
 
   }
