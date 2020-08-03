@@ -4,9 +4,9 @@ import statedata from '../service/statedata';
 class Home extends Component {
 
 smallStyle = {
-  height: '10px',
-  width: '10px',
-  'background-color': 'green',
+  height: 10px;
+  width: '10px';
+  background-color: 'green';
   'border-radius': '50%',
   display: 'flex',
   color: 'white'
@@ -78,7 +78,7 @@ var popup = L.popup()
 
 var icon = L.divIcon({
         className: 'custom-div-icon smallStyle',
-        html: "<span style='height: 10px;  width: 10px;  background-color: green;  border-radius: 50%;  display: flex; color: white; font:bold 10px serif;justify-content: center;align-items: center;'>1</span>",
+        html: "<span>1</span>",
     });
     
 L.marker([11.1271, 78.6569], { icon: icon }).addTo(mymap);
