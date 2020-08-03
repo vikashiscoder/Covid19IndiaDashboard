@@ -7,7 +7,29 @@ constructor(props){
   this.state = {};
 }
 
+getData(){
+   fetch("https://cors-anywhere.herokuapp.com/https://api.covidindiatracker.com/state_data.json")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result.items
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+}
   componentDidMount(){
+
     var mymap = L.map('mapid').setView([20.5937, 78.9629], 5);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
