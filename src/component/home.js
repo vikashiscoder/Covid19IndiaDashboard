@@ -3,10 +3,22 @@ import statedata from '../service/statedata';
 
 class Home extends Component {
 
+smallStyle = {
+  height: '10px',
+  width: '10px',
+  'background-color': 'green',
+  'border-radius': '50%',
+  display: 'flex',
+  color: 'white'
+ };
+ // font:bold 10px serif;justify-content: center;align-items: center;}
+
 constructor(props){
   super(props);
   this.state = {};
 }
+
+
 
 getData = () => {
    fetch("https://cors-anywhere.herokuapp.com/https://api.covidindiatracker.com/state_data.json")
@@ -15,14 +27,16 @@ getData = () => {
         (result) => {
                   console.log(result.length);
          result.forEach(x => {
-           console.log('x.state');
+           console.log(x.state);
+           
             let stateRec = statedata.filter(s => s.name == x.state); 
-            if(stateRec){
+            console.log(stateRec);
+            if(stateRec != undefined && stateRec.length > 0){
               x.lat = stateRec[0].lat;
               x.long = stateRec[0].long;
             }
+            
           });
-          console.log(result);
           //console.log(result.length);
           this.setState({
             isLoaded: true,
@@ -40,7 +54,9 @@ getData = () => {
         }
       )
 }
-  componentDidMount(){
+
+
+componentDidMount(){
     this.getData();
     var mymap = L.map('mapid').setView([20.5937, 78.9629], 5);
 
@@ -61,7 +77,7 @@ var popup = L.popup()
 */
 
 var icon = L.divIcon({
-        className: 'custom-div-icon',
+        className: 'custom-div-icon smallStyle',
         html: "<span style='height: 10px;  width: 10px;  background-color: green;  border-radius: 50%;  display: flex; color: white; font:bold 10px serif;justify-content: center;align-items: center;'>1</span>",
     });
     
