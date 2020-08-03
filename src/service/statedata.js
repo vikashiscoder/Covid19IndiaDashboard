@@ -1,4 +1,4 @@
-const statedata = [{name:'Tamil Nadu', lat:11.059821, long:78.387451}
+export default statedata = [{name:'Tamil Nadu', lat:11.059821, long:78.387451},
 {name:'Telangana', lat:17.123184, long:79.208824},
 {name:'Madhya Pradesh', lat:23.473324, long:77.947998},
 {name:'Haryana', lat:29.238478, long:76.431885},

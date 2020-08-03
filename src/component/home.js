@@ -13,7 +13,12 @@ getData = () => {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result);
+         result.forEach(x => {
+           console.log(x.state);
+            //stateRec = statedata.filter(s => s.name == x.state); 
+            console.log(statedata[0]) ;
+          });
+          //console.log(result.length);
           this.setState({
             isLoaded: true,
             items: result.items
