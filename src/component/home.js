@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import statedata from '../service/statedata';
 
 class Home extends Component {
 
