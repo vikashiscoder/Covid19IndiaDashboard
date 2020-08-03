@@ -3,16 +3,23 @@ import statedata from '../service/statedata';
 
 class Home extends Component {
 
-smallStyle = {
-  height: 10px;
-  width: '10px';
-  background-color: 'green';
-  'border-radius': '50%',
-  display: 'flex',
-  color: 'white'
- };
- // font:bold 10px serif;justify-content: center;align-items: center;}
-
+smallicon = L.divIcon({
+        className: 'custom-div-icon smallStyle',
+        html: "<span style='height: 10px;  width: 10px;  background-color: green;  border-radius: 50%;  display: flex; color: white; font:bold 10px serif;justify-content: center;align-items: center;'>DATA</span>",
+    });
+mediumicon = L.divIcon({
+        className: 'custom-div-icon smallStyle',
+        html: "<span style='height: 20px;  width: 20px;  background-color: green;  border-radius: 50%;  display: flex; color: white; font:bold 10px serif;justify-content: center;align-items: center;'>DATA</span>",
+    });
+bigicon = L.divIcon({
+        className: 'custom-div-icon smallStyle',
+        html: "<span style='height: 30px;  width: 30px;  background-color: green;  border-radius: 50%;  display: flex; color: white; font:bold 10px serif;justify-content: center;align-items: center;'>DATA</span>",
+    });
+verybigicon = L.divIcon({
+        className: 'custom-div-icon smallStyle',
+        html: "<span style='height: 40px;  width: 40px;  background-color: green;  border-radius: 50%;  display: flex; color: white; font:bold 10px serif;justify-content: center;align-items: center;'>DATA</span>",
+    });
+    
 constructor(props){
   super(props);
   this.state = {};
@@ -76,12 +83,10 @@ var popup = L.popup()
     .openOn(mymap);
 */
 
-var icon = L.divIcon({
-        className: 'custom-div-icon smallStyle',
-        html: "<span>1</span>",
-    });
-    
-L.marker([11.1271, 78.6569], { icon: icon }).addTo(mymap);
+
+
+L.marker([11.1271, 78.6569], { icon: verybigicon }).addTo(mymap);
+//L.marker([11.1271, 78.6569], { icon: mediumicon }).addTo(mymap);
 
 
   }
