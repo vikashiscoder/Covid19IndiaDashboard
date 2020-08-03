@@ -7,11 +7,12 @@ constructor(props){
   this.state = {};
 }
 
-getData(){
+getData = () => {
    fetch("https://cors-anywhere.herokuapp.com/https://api.covidindiatracker.com/state_data.json")
       .then(res => res.json())
       .then(
         (result) => {
+          console.log(result);
           this.setState({
             isLoaded: true,
             items: result.items
@@ -29,7 +30,7 @@ getData(){
       )
 }
   componentDidMount(){
-
+    this.getData();
     var mymap = L.map('mapid').setView([20.5937, 78.9629], 5);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
