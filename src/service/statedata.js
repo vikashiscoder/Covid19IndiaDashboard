@@ -1,4 +1,4 @@
-export default statedata = [{name:'Tamil Nadu', lat:11.059821, long:78.387451},
+const statedata = [{name:'Tamil Nadu', lat:11.059821, long:78.387451},
 {name:'Telangana', lat:17.123184, long:79.208824},
 {name:'Madhya Pradesh', lat:23.473324, long:77.947998},
 {name:'Haryana', lat:29.238478, long:76.431885},
@@ -20,3 +20,5 @@ export default statedata = [{name:'Tamil Nadu', lat:11.059821, long:78.387451},
 {name:'Odisha', lat:20.94092, long:84.803467},
 {name:'Rajasthan', lat:27.391277, long:73.432617},
 {name:'Himachal Pradesh', lat:32.084206, long:77.571167}];
+
+export default statedata;
