@@ -18,7 +18,6 @@ componentDidMount(){
   render() {
     return (
         <div>
-          <Statemap />
         </div>
     );
   }

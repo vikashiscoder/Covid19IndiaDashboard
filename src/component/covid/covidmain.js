@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Statemap from './statemap';
-
+import './style/style.css';
 class Covidmain extends Component {
 
 constructor(props){
