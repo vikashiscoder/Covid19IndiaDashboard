@@ -4,15 +4,16 @@ import Home from './component/home';
 import About from './component/about';
 import Contact from './component/contact';
 import PrimarySearchAppBar from './component/primarysearchappbar';
+import Covidmain from './component/covid/covidmain';
 
 class App extends Component {
   render() {
     return (
     <Router>
         <div>
-        <PrimarySearchAppBar></PrimarySearchAppBar>
           <Switch>
               <Route exact path='/' component={Home} />
+              <Route exact path='/covid' component={Covidmain} />
               <Route path='/contact' component={Contact} />
               <Route path='/about' component={About} />
           </Switch>
