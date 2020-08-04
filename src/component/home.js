@@ -9,20 +9,20 @@ sizestring = 'SIZE';
 datastring = 'DATA';
 
 smallicon = L.divIcon({
-        className: 'custom-div-icon smallStyle',
-        html: this.iconhtml.replace(this.sizestring,'10'),
+        className: 'custom-div-icon',
+        html: this.iconhtml.replace(new RegExp(this.sizestring, 'g'),'10'),
     });
 mediumicon = L.divIcon({
-        className: 'custom-div-icon smallStyle',
-        html: this.iconhtml.replace(this.sizestring,'20'),
+        className: 'custom-div-icon',
+        html: this.iconhtml.replace(new RegExp(this.sizestring, 'g'),'20'),
     });
 bigicon = L.divIcon({
-        className: 'custom-div-icon smallStyle',
-        html: this.iconhtml.replace(this.sizestring,'30'),
+        className: 'custom-div-icon',
+        html: this.iconhtml.replace(new RegExp(this.sizestring, 'g'),'30'),
     });
 verybigicon = L.divIcon({
-        className: 'custom-div-icon smallStyle',
-        html: this.iconhtml.replace(this.sizestring,'40'),
+        className: 'custom-div-icon',
+        html: this.iconhtml.replace(new RegExp(this.sizestring, 'g'),'40')
     });
 
 constructor(props){
@@ -62,9 +62,7 @@ getData = () => {
         }
       )
       .then(() => {
-        console.log(1);
         this.setupMap();
-        console.log(2);
         })
       
 }
@@ -84,11 +82,15 @@ setupMap(){
 
 
   this.state.items.forEach(x => {
-    let icon = this.smallicon;
-    console.log(1)
-    icon.options.html = icon.options.html.replace('DATA', x.active);
-    console.log(icon.options.html)
-    L.marker([11.1271, 78.6569], { icon: icon }).addTo(mymap);
+    let icon = Object.assign({},this.verybigicon);
+    console.log(1);
+    console.log(icon)
+    console.log(2);
+    icon.options.html = icon.options.html.replace
+    ('DATA', x.active);
+    console.log(icon);
+    L.marker([x.lat, x.long], { icon: icon }).addTo(mymap);
+    console.log(4);
   })
   
 }
