@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import statedata from '../service/statedata';
+import statedata from '../../service/statedata';
 
 class Statemap extends Component {
 
