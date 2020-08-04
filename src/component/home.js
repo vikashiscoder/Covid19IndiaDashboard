@@ -8,22 +8,22 @@ iconhtml = "<span style='height: SIZEpx;  width: SIZEpx;  background-color: gree
 sizestring = 'SIZE';
 datastring = 'DATA';
 
-smallicon = L.divIcon({
+smallicon = {
         className: 'custom-div-icon',
         html: this.iconhtml.replace(new RegExp(this.sizestring, 'g'),'10'),
-    });
-mediumicon = L.divIcon({
+    };
+mediumicon = {
         className: 'custom-div-icon',
         html: this.iconhtml.replace(new RegExp(this.sizestring, 'g'),'20'),
-    });
-bigicon = L.divIcon({
+    };
+bigicon = {
         className: 'custom-div-icon',
         html: this.iconhtml.replace(new RegExp(this.sizestring, 'g'),'30'),
-    });
-verybigicon = L.divIcon({
+    };
+verybigicon = {
         className: 'custom-div-icon',
         html: this.iconhtml.replace(new RegExp(this.sizestring, 'g'),'40')
-    });
+    };
 
 constructor(props){
   super(props);
@@ -82,14 +82,17 @@ setupMap(){
 
 
   this.state.items.forEach(x => {
-    let icon = Object.assign({},this.verybigicon);
+    console.log(0);
+    let icon =  Object.assign({},this.verybigicon);
     console.log(1);
     console.log(icon)
     console.log(2);
-    icon.options.html = icon.options.html.replace
+    icon.html = icon.html.replace
     ('DATA', x.active);
     console.log(icon);
-    L.marker([x.lat, x.long], { icon: icon }).addTo(mymap);
+    console.log(x.lat);
+    console.log(x.long)
+    L.marker([x.lat, x.long], { icon: L.divIcon(icon) }).addTo(mymap);
     console.log(4);
   })
   
