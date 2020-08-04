@@ -82,15 +82,15 @@ setupMap(){
     }
   ).addTo(mymap);
 
-/*
+
   this.state.items.forEach(x => {
     let icon = this.smallicon;
     console.log(1)
-    icon.options.html = icon.options.html.replace('DATA', 'x.active');
+    icon.options.html = icon.options.html.replace('DATA', x.active);
     console.log(icon.options.html)
     L.marker([11.1271, 78.6569], { icon: icon }).addTo(mymap);
   })
-  */
+  
 }
 
 
