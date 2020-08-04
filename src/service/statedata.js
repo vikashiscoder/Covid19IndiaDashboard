@@ -32,23 +32,8 @@ const statedata = [{name:'Tamil Nadu', lat:11.059821, long:78.387451},
 {name:'Daman and Diu', lat:20.4283, long:72.8397},
 {name:'Dadra and Nagar Haveli', lat:20.1809, long:73.0169},
 {name:'Lakshadweep', lat:10.57, long:72.64},
-
-
-{name:'Madhya Pradesh', lat:23.473324, long:77.947998},
-
-
-{name:'Haryana', lat:29.065773, long:76.040497},
-,
-{name:'Tripura', lat:23.745127, long:91.746826},
-
-
-{name:'Kerala', lat:10.850516, long:76.27108},
-
-
-
 {name:'Gujarat', lat:22.309425, long:72.13623},
-
-
-{name:'Himachal Pradesh', lat:32.084206, long:77.571167}];
+{name:'Odisha', lat:22.309425, long:72.13623}
+]
 
 export default statedata;

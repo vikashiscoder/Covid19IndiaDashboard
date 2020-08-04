@@ -80,20 +80,13 @@ setupMap(){
     }
   ).addTo(mymap);
 
-
+console.log(this.state.items.length)
   this.state.items.forEach(x => {
-    console.log(0);
+    console.log(x);
     let icon =  Object.assign({},this.verybigicon);
-    console.log(1);
-    console.log(icon)
-    console.log(2);
     icon.html = icon.html.replace
     ('DATA', x.active);
-    console.log(icon);
-    console.log(x.lat);
-    console.log(x.long)
     L.marker([x.lat, x.long], { icon: L.divIcon(icon) }).addTo(mymap);
-    console.log(4);
   })
   
 }
