@@ -82,8 +82,15 @@ setupMap(){
 
 console.log(this.state.items.length)
   this.state.items.forEach(x => {
-    console.log(x);
-    let icon =  Object.assign({},this.verybigicon);
+    let icon =  Object.assign({},this.bigicon);
+    if(x.active < 100){
+      icon =  Object.assign({},this.smallicon);
+    }
+    
+    if(x.active >= 100 && x.active < 1000){
+      icon =  Object.assign({},this.mediumicon);
+    }
+
     icon.html = icon.html.replace
     ('DATA', x.active);
     L.marker([x.lat, x.long], { icon: L.divIcon(icon) }).addTo(mymap);
