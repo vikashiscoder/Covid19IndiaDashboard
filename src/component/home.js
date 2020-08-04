@@ -80,20 +80,29 @@ setupMap(){
     }
   ).addTo(mymap);
 
-console.log(this.state.items.length)
+
   this.state.items.forEach(x => {
     let icon =  Object.assign({},this.bigicon);
     if(x.active < 100){
       icon =  Object.assign({},this.smallicon);
     }
     
-    if(x.active >= 100 && x.active < 1000){
+    if(x.active >= 100 && x.active < 9999){
       icon =  Object.assign({},this.mediumicon);
     }
 
     icon.html = icon.html.replace
     ('DATA', x.active);
-    L.marker([x.lat, x.long], { icon: L.divIcon(icon) }).addTo(mymap);
+    let marker = L.marker([x.lat, x.long], { icon: L.divIcon(icon) }).addTo(mymap);
+    let popupstring  = 
+    '<div> STATE   :' + x.state + "</div>" +
+    '<div> ACTIVE: :' + x.active + "</div>"+
+    '<div> CONFIRMED: :' + x.confirmed + "</div>"+
+    '<div> RECOVERED: :' + x.recovered + "</div>"+
+    '<div> DEATHS: :' + x.deaths + "</div>";
+
+    marker.bindPopup(popupstring).openPopup();
+
   })
   
 }
