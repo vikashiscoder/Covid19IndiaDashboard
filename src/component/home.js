@@ -94,17 +94,24 @@ setupMap(){
     icon.html = icon.html.replace
     ('DATA', x.active);
     let marker = L.marker([x.lat, x.long], { icon: L.divIcon(icon) }).addTo(mymap);
+    
     let popupstring  = 
-    '<div> STATE   :' + x.state + "</div>" +
-    '<div> ACTIVE: :' + x.active + "</div>"+
-    '<div> CONFIRMED: :' + x.confirmed + "</div>"+
-    '<div> RECOVERED: :' + x.recovered + "</div>"+
-    '<div> DEATHS: :' + x.deaths + "</div>";
+    '<div style="display:grid;grid-template-column:auto auto">' +
+    this.addadiv('STATE') + this.adddiv(x.state) +
+    this.addadiv('ACTIVE') + this.adddiv(x.active) +
+    this.addadiv('CONFIRMED') + this.adddiv(x.confirmed) +
+    this.addadiv('RECOVERED') + this.adddiv(x.recovered) +
+    this.addadiv('DEATHS') + this.adddiv(x.deaths) +
+    '</div>';
 
     marker.bindPopup(popupstring).openPopup();
 
   })
   
+}
+
+addadiv(str){
+  return '<div>' + str + '</div>';
 }
 
 
@@ -116,8 +123,7 @@ componentDidMount(){
   render() {
     return (
         <div>
-AAAS
-<div id="mapid"></div>
+          <div id="mapid"></div>
         </div>
     );
   }
