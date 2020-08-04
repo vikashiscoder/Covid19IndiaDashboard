@@ -33,7 +33,7 @@ const statedata = [{name:'Tamil Nadu', lat:11.059821, long:78.387451},
 {name:'Dadra and Nagar Haveli', lat:20.1809, long:73.0169},
 {name:'Lakshadweep', lat:10.57, long:72.64},
 {name:'Gujarat', lat:22.309425, long:72.13623},
-{name:'Odisha', lat:22.309425, long:72.13623}
+{name:'Odisha', lat:20.9517, long:85.0985}
 ]
 
 export default statedata;
