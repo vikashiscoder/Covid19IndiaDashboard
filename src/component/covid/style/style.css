@@ -1,3 +1,32 @@
-body {
-  background-color: lightblue;
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  background-color: #222222;
+  padding: 10px;
+  background-image: url(https://images.unsplash.com/photo-1572877183903-f6f33bbfa7c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+  background-size:cover;
+} 
+
+.maintext{
+  color:white;
+  font-size:84px;
+  position:relative;
+  } 
+
+
+.fade-in {
+  animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
+}
+@keyframes fadeIn {
+  0% {
+    top:200px; opacity:0;
+  }
+  100% {
+    top:0px;opacity:1;
+  }
 }
