@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import statedata from '../service/statedata';
 
-class Home extends Component {
+class Statemap extends Component {
 
 iconhtml = "<span style='height: SIZEpx;  width: SIZEpx;  background-color: green;  border-radius: 50%;  display: flex; color: white; font:bold 10px serif;justify-content: center;align-items: center;'>DATA</span>";
 
@@ -129,4 +129,4 @@ componentDidMount(){
   }
 }
 
-export default Home;
+export default Statemap;
