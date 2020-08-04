@@ -44,11 +44,12 @@ getData = () => {
               x.long = stateRec[0].long;
             }
           });
-          //console.log(result.length);
+
           this.setState({
             isLoaded: true,
-            items: result.items
+            items: result
           });
+
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -60,37 +61,42 @@ getData = () => {
           });
         }
       )
+      .then(() => {
+        this.setupMap()
+        })
+      
+}
+
+setupMap(){
+  var mymap = L.map('mapid').setView([20.5937, 78.9629], 5);
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', 
+    {
+      attribution: 'Map data',
+      id: 'vikashis/ckd8rjoov0rz91io99r2t1bqq',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1IjoidmlrYXNoaXMiLCJhIjoiY2tkOHI4YnZsMDZpeDJ6bWliM2Y5dTZiaCJ9.EweMjk3iwotgronCLOX-Fw'
+    }
+  ).addTo(mymap);
+
+  this.state.items.forEach(x => {
+    let icon = this.smallicon;
+    console.log(1)
+    icon.options.html.replace(this.datastring, x.active);
+    console.log(2)
+    console.log(icon)
+    L.marker([11.1271, 78.6569], { icon: icon }).addTo(mymap);
+  })
+  
 }
 
 
 componentDidMount(){
     this.getData();
-    console.log(this.state.items);
-    var mymap = L.map('mapid').setView([20.5937, 78.9629], 5);
-
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data',
-    
-    id: 'vikashis/ckd8rjoov0rz91io99r2t1bqq',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoidmlrYXNoaXMiLCJhIjoiY2tkOHI4YnZsMDZpeDJ6bWliM2Y5dTZiaCJ9.EweMjk3iwotgronCLOX-Fw'
-}).addTo(mymap);
-
-/*
-var popup = L.popup()
-    .setLatLng([11.1271, 78.6569])
-    .setContent("I am a standalone popup.")
-    .openOn(mymap);
-*/
-
-
-
-L.marker([11.1271, 78.6569], { icon: this.smallicon }).addTo(mymap);
-//L.marker([11.1271, 78.6569], { icon: mediumicon }).addTo(mymap);
-
-
   }
+
+
   render() {
     return (
         <div>
