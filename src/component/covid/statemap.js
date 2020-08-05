@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import statedata from '../../service/statedata';
+import Markerpopup from './markerpopup';
+import { renderToString } from 'react-dom/server'
 
 class Statemap extends Component {
 
@@ -95,6 +97,7 @@ setupMap(){
     ('DATA', x.active);
     let marker = L.marker([x.lat, x.long], { icon: L.divIcon(icon) }).addTo(mymap);
 
+/*
     let popupstring  = 
     '<div style="display:grid;grid-template-column:auto auto;grid-gap: 10px 50px;">' +
       this.addadiv(x.state,'grid-column-start: 1;grid-column-end: 3;color:green;') +
@@ -103,8 +106,10 @@ setupMap(){
     this.addadiv('RECOVERED') + this.addadiv(x.recovered) +
     this.addadiv('DEATHS') + this.addadiv(x.deaths) +
     '</div>';
-    console.log(this.addadiv('STATE',''));
-    marker.bindPopup(popupstring).openPopup();
+    */
+    //console.log(this.addadiv('STATE',''));
+    //marker.bindPopup(popupstring).openPopup();
+    marker.bindPopup(renderToString(<Markerpopup></Markerpopup>)).openPopup();
 
   })
   
