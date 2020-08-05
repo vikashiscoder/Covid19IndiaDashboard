@@ -1,11 +1,7 @@
-.districtbutton{
-  background-color: blue;
-  border-radius: 20px;
-  box-shadow: 1px 1px 20px 0px black;
-  color: white;
-  text-align: center;
-  grid-column-start: 1;
-  grid-column-end: 3;
+.districttable{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1px;
 }
 
 .popupheader{

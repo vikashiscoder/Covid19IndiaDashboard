@@ -24,7 +24,7 @@ showDistrict(e){
     const containerStyle = 
       { display:"grid",
         gridTemplateColumns:"auto auto",
-        gridGap: "10px 50px",
+        gridGap: "2px 50px",
       };
     const s = 
       { color:"green"
@@ -38,7 +38,16 @@ showDistrict(e){
         <div>RECOVERED</div> <div>{this.props.data.recovered}</div>
         <div>DEATHS</div> <div>{this.props.data.deaths}</div>
         
-        <Districtdata ></Districtdata>
+        <div className="popupheader"> Disctrict </div>
+        <div className="districttable"> 
+          <div>Name</div><div>Confirmed</div>
+          {this.props.data.districtData.map(x => (
+              <div>
+                <div>{x.name}</div><div>{x.confirmed}</div>
+              </div>
+          ))}
+          
+        </div>
         
       </div>
     )
