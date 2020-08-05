@@ -8,7 +8,6 @@ class Markerpopup extends Component {
 
 constructor(props){
   super(props);
-  this.state = {};
 }
 
 
@@ -21,12 +20,15 @@ componentDidMount(){
     const containerStyle = 
       { display:"grid",
         gridTemplateColumns:"auto auto",
-        gridGap: "10px 50px"
+        gridGap: "10px 50px",
+      };
+    const s = 
+      { color:"green"
       };
 
     return (
       <div style={containerStyle}>
-        <div className={styles.popupgreenheader}> {this.props.data.state} </div>
+        <div className="popupheader"> {this.props.data.state} </div>
         <div>ACTIVE</div> <div>{this.props.data.active}</div>
         <div>CONFIRMED</div> <div>{this.props.data.confirmed}</div>
         <div>RECOVERED</div> <div>{this.props.data.recovered}</div>

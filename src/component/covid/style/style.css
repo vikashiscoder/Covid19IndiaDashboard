@@ -1,11 +1,10 @@
-.popupgreenheader{
-  color:green;
-}
-
 .popupheader{
   grid-column-start: 1;
   grid-column-end: 3;
- }
+  color:green;
+  text-align: center;
+
+  }
 
 .grid-container {
   display: grid;
