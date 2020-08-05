@@ -16,7 +16,8 @@ componentDidMount(){
 
   render() {
     return (
-        <div>
+        <div class="grid-container">
+          <div class="maintext fade-in"><h1>COVID India Dashboard</h1></div>
           <Statemap />
         </div>
     );
