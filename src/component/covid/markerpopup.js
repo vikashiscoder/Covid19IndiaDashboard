@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Statemap from './statemap';
+import Districtdata from './districtdata';
 import styles from './style/style.css';
 
 class Markerpopup extends Component {
@@ -36,7 +37,9 @@ showDistrict(e){
         <div>CONFIRMED</div> <div>{this.props.data.confirmed}</div>
         <div>RECOVERED</div> <div>{this.props.data.recovered}</div>
         <div>DEATHS</div> <div>{this.props.data.deaths}</div>
-        <div className='districtbutton' onClick="console.log(e)">District data</div>
+        
+        <Districtdata ></Districtdata>
+        
       </div>
     )
 }
