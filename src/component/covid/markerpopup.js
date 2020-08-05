@@ -15,6 +15,9 @@ constructor(props){
 componentDidMount(){
   }
 
+showDistrict(e){
+  console.log(e);
+}
 
   render() {
     const containerStyle = 
@@ -33,6 +36,7 @@ componentDidMount(){
         <div>CONFIRMED</div> <div>{this.props.data.confirmed}</div>
         <div>RECOVERED</div> <div>{this.props.data.recovered}</div>
         <div>DEATHS</div> <div>{this.props.data.deaths}</div>
+        <div className='districtbutton' onClick="console.log(e)">District data</div>
       </div>
     )
 }
