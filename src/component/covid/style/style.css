@@ -1,3 +1,12 @@
+.popupgreenheader{
+  color:green;
+}
+
+.popupheader{
+  grid-column-start: 1;
+  grid-column-end: 3;
+ }
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
@@ -29,8 +38,4 @@
   100% {
     top:0px;opacity:1;
   }
-}
-
-.popupheader{
-  grid-column-start: 1;grid-column-end: 2;color:green;
 }
