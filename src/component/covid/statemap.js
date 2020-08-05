@@ -109,7 +109,7 @@ setupMap(){
     */
     //console.log(this.addadiv('STATE',''));
     //marker.bindPopup(popupstring).openPopup();
-    marker.bindPopup(renderToString(<Markerpopup></Markerpopup>)).openPopup();
+    marker.bindPopup(renderToString(<Markerpopup data={x}></Markerpopup>)).openPopup();
 
   })
   

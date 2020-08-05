@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import Statemap from './statemap';
-import './style/style.css';
-
-const containerStyle = 
-{display:"grid",
-gridTemplateColumn:"auto auto",
-gridGap: "10px 50px"
-};
+import style from './style/style.css';
 
 class Markerpopup extends Component {
 
@@ -14,9 +8,7 @@ class Markerpopup extends Component {
 
 constructor(props){
   super(props);
-  this.state = {
-    item:props
-  };
+  this.state = {};
 }
 
 
@@ -26,8 +18,20 @@ componentDidMount(){
 
 
   render() {
+    const containerStyle = 
+      { display:"grid",
+        grid-template-column:"auto auto",
+        gridGap: "10px 50px"
+      };
+
     return (
-      <div style={containerStyle}>Test</div>
+      <div style={containerStyle}>
+        <div className={style.popupheader}> {this.props.data.state} </div>
+        <div>ACTIVE</div> <div>{this.props.data.active}</div>
+        <div>CONFIRMED</div> <div>{this.props.data.confirmed}</div>
+        <div>RECOVERED</div> <div>{this.props.data.recovered}</div>
+        <div>DEATHS</div> <div>{this.props.data.deaths}</div>
+      </div>
     )
 }
 }
