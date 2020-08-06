@@ -1,11 +1,10 @@
 .districtrow{
   grid-column-start: 1;
-  grid-column-end: 3;
-  display:block-inline;
+  grid-column-end: 2;
   }
 .popupheader{
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 2;
   color:green;
   text-align: center;
 
