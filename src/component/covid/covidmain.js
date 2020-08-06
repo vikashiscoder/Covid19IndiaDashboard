@@ -9,11 +9,8 @@ constructor(props){
   this.state = {};
 }
 
-
-
 componentDidMount(){
   }
-
 
   render() {
     return (
