@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import statedata from '../../service/statedata';
 import Markerpopup from './markerpopup';
 import { renderToString } from 'react-dom/server';
-import Districtdata from './districtdata';
+
 
 class Statemap extends Component {
 
