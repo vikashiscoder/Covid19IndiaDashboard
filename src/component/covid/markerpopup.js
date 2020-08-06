@@ -28,7 +28,7 @@ showDistrict(e){
       };
 
     return (
-    <div>
+    <div className="popupfont">
         <div style={containerStyle}>
           <div className="popupheader"> {this.props.data.state} </div>
           <div>ACTIVE</div> <div>{this.props.data.active}</div>
@@ -38,12 +38,15 @@ showDistrict(e){
         </div>
         <hr/>
         <div className="popupcontainer">
+          <div className="popuprow"><b> Districtwise count</b> </div>
           <div>Name</div><div>Confirmed</div>
+          <div className="scrollablediv popuprow">
             {this.props.data.districtData.map(x => (
-                <div className="popupcontainer popuprow">
+                <div className="popupcontainer">
                   <div>{x.name}</div><div>{x.confirmed}</div>
                 </div>
             ))}
+           </div> 
 
         </div> 
       </div>
