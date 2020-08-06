@@ -71,17 +71,33 @@ getData = () => {
 }
 
 setupMap(){
-  var mymap = L.map('mapid').setView([20.5937, 78.9629], 5);
+  //var mymap = L.map('mapid').setView([23.5937, 78.9629], 5);
+
+  //Set map bounds
+  var maxBounds = [
+    [6.4626999, 68.1097], //Southwest
+    [35.513327, 97.39535869999999]  //Northeast
+];
+
+  var mymap = L.map('mapid', {
+    'center': [0, 0],
+    'zoom': 0,
+    'maxBounds': maxBounds
+}).fitBounds(maxBounds);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', 
     {
-      attribution: 'Map data',
-      id: 'vikashis/ckd8rjoov0rz91io99r2t1bqq',
+      attribution: '<b>Click on count for more deteils</b>',
+      id: 'vikashis/ckdiq0pf50teu1iprlvljatvg',
       tileSize: 512,
       zoomOffset: -1,
       accessToken: 'pk.eyJ1IjoidmlrYXNoaXMiLCJhIjoiY2tkOHI4YnZsMDZpeDJ6bWliM2Y5dTZiaCJ9.EweMjk3iwotgronCLOX-Fw'
     }
   ).addTo(mymap);
+
+
+//map.setMaxBounds(maxBounds);
+//map.fitBounds(maxBounds);
 
 
   this.state.items.forEach(x => {

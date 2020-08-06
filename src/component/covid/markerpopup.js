@@ -38,8 +38,8 @@ showDistrict(e){
         </div>
         <hr/>
         <div className="popupcontainer">
-          <div className="popuprow"><b> Districtwise count</b> </div>
-          <div>Name</div><div>Confirmed</div>
+          <div className="popuprow"><i> Districts</i> </div>
+          <div><b>Name</b></div><div><b>Confirmed</b></div>
           <div className="scrollablediv popuprow">
             {this.props.data.districtData.map(x => (
                 <div className="popupcontainer">
