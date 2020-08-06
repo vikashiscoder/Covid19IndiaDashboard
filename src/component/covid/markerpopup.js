@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Statemap from './statemap';
-import Districtdata from './districtdata';
 import styles from './style/style.css';
 
 class Markerpopup extends Component {
