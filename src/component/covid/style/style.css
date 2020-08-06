@@ -1,6 +1,7 @@
 .districtrow{
   grid-column-start: 1;
   grid-column-end: 3;
+  display:block-inline;
   }
 .popupheader{
   grid-column-start: 1;

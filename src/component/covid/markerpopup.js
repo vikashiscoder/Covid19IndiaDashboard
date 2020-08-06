@@ -31,7 +31,7 @@ showDistrict(e){
       };
 
     return (
-
+    <div>
         <div style={containerStyle}>
           <div className="popupheader"> {this.props.data.state} </div>
           <div>ACTIVE</div> <div>{this.props.data.active}</div>
@@ -39,17 +39,17 @@ showDistrict(e){
           <div>RECOVERED</div> <div>{this.props.data.recovered}</div>
           <div>DEATHS</div> <div>{this.props.data.deaths}</div>
         </div>
-
-        <div>
+        <hr/>
+        <div style={containerStyle}>
           <div>Name</div><div>Confirmed</div>
             {this.props.data.districtData.map(x => (
-                <div className="districtrow">
-                  <span>{x.name}</span>-<span>{x.confirmed}</span>
+                <div className="districtrow" >
+                  <div>{x.name}</div><div>{x.confirmed}</div>
                 </div>
             ))}
 
         </div> 
-
+      </div>
     )
 }
 }
