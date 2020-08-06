@@ -59,9 +59,10 @@ stages:
           - task: AzureRmWebAppDeployment@4
             displayName: 'Azure App Service Deploy: 2020app'
             inputs:
-              azureSubscription: $(azureSubscription)
-              appType: webAppLinux
-              WebAppName: $(webAppName)
+              ConnectionType: 'AzureRM'
+              azureSubscription: 'Visual Studio Professional with MSDN(1)(92f69455-9a72-485b-a127-8c3c66428d4f)'
+              appType: 'webAppLinux'
+              WebAppName: 'main-app'
               packageForLinux: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               RuntimeStack: 'NODE|10.10'
               StartupCommand: 'npm run start'
