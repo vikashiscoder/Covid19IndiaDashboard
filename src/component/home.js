@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import statedata from '../service/statedata';
-import Statemap from './covid/statemap';
+import Covidmain from './covid/covidmain';
 
 class Home extends Component {
 
@@ -17,9 +17,7 @@ componentDidMount(){
 
   render() {
     return (
-        <div>
-          Home
-        </div>
+        <Covidmain/>
     );
   }
 }
