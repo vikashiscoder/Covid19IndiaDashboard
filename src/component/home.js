@@ -18,6 +18,7 @@ componentDidMount(){
   render() {
     return (
         <div>
+          Home
         </div>
     );
   }
