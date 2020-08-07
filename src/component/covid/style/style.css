@@ -43,7 +43,7 @@
 }
 
 .grid-container {
-  display: grid;
+  display: flex;
   grid-template-columns: auto auto;
   grid-gap: 1px;
   background-color: #222222;
@@ -54,7 +54,7 @@
 
 .maintext{
   color:white;
-  font-size:30px;
+  font-size:3vw;
   position:relative;
   } 
 
