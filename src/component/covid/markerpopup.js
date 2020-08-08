@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Statemap from './statemap';
-import styles from './style/style.css';
+import styles from './style/covidstyle.css';
 
 class Markerpopup extends Component {
 
